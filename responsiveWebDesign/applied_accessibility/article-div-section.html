@@ -1,0 +1,122 @@
+<!-- Wrap Content in the article Element
+	`article` is another one of the new HTML5 elements that adds semantic meaning to our markup. `Article` is a sectioning element, and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or new articles.
+
+
+	Determining whether content can stand alone is usually a judgement call, but there are a couple simple test we can use. Ask ourself if we removed all surrounding context, would that content still make sense? Similarly for text, would the content hold up if it were in an RSS feed?
+
+	Remember that folks using assistive technologies rely on organized, sematically meaningful markup to better uderstand our work.
+
+
+	Note about `section` and `div` The `section` element is also new with HTML5, and has a slightly different semantic meaning than `article`. An `article` is for standalone content and a `section` is for grouping thematically related content. They can be used within each, as needed. For example, if a book is the `article`, then each chapter is a `section`. When there's no relationship between groups of content, then use a `div`.
+
+	```
+		<div> - groups content
+		<section> - groups related content
+		<article> - groups independent, self-contained content
+	``` 
+
+	Camper Cat used `article` tags to wrap the posts on his blog page, but he forgot to use them around the top one. Change the `div` tag to use an 
+	
+
+ -->
+
+
+ <!-- Improve Form Field accessibility with the label element
+
+	Improving accessibility with semantic HTML markup applies to using both appropriate tag names as well as attributes. The next several challenges cover some important scenarios using attributes in froms.
+
+	The `label` tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readbale The `for` attribute on a `label` tag explicitly associates that `label` with the form control and is used by screen readers.
+
+
+	You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a label element along with the label text in order to make the text clickable. Another way to achieve this is by using the for attribute as explained in this lesson.
+
+
+	The value of the for attribute must be the same as the value of the id attribute of the form control. Here's an example:
+
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+	</from>
+
+
+  -->
+
+<!-- Wrap Radio Buttons in a fieldset Element for Better Accessibility
+	The next form topic covers accessibility of radio buttons. Each choice is given a `label` with a `for` attribute typing to the `id` of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of set.
+
+	The `fieldset` tag surrounds the entire grouping of radio buttons to achieve this. It often uses a `legend` tag to provide a description for the grouping, which is read by screen readers for each choice in the `fieldset` element. 
+
+	The `fieldset` wrapper and `legend` tag are not necessary when the choices are self-explanatory, like gender selection. Using a `label` with the `for` attribute for each radio button is sufficient.
+
+	Here's an example:
+
+	```
+	<form>
+		<fieldset>
+			<legend>Choose one of these three items:
+			</legend>
+			<input type="radio" id="one" name="items" value="one">
+			<label for="one">Choice One</label><br>
+			<input id="two" type="radio" name="items" value="two">
+			<label for="two">Choice Two</label>
+			<input type="radio" name="items" id="three" value="three">
+			<label for="three">Choice Three</label>
+		</fieldset>
+	</form>
+
+	```
+
+
+
+
+ -->
+
+
+<body>
+	<header>
+	 <h1>Deep Thoughts with Master Camper Cat</h1>
+	 </header>
+
+	 <main>
+
+	 	<section>
+	 		<form>
+	 			<p>Sign up to receive Camper Cat's blog posts by email here!</p>
+	 			<label for="email">Email</label>
+	 			<input type="text" name="email" id="email">
+	 			<fieldset>
+	 				<legend>What level ninja are you?</legend>
+	 				<input type="radio" name="levels" id="newbie" value="newbie">
+	 				<label for="newbie">Newbie Kitten</label><br>
+	 				<input type="radio" name="levels" id="intermediate" value="intermediate">
+	 				<label for="intermediate">Developing Student</label><br>
+	 				<input type="radio" name="levels"
+	 				id="master" value="master">
+	 				<label for="master">Master</label><br>
+	 			</fieldset>
+	 			<input type="submit" name="submit" value="Submit">
+	 		</form>
+	 	</section>
+	 	<article>
+	 		<h2>The Garfield Files: Lasagna as Training Fuel?</h2>
+	 		<p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+	 	</article>
+
+	 	<img src="samuraiSwords.jpeg" alt="">
+
+	 	<article>
+	 		<h2>Defeating your Foe: the Red Dot is Ours!</h2>
+	 		<p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+	 	</article>
+
+
+	 	<img src="samuraiSwords.jpeg" alt="">
+		<article>
+		    <h2>Is Chuck Norris a Cat Person?</h2>
+		    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+		  </article>
+	 </main>
+
+	 <footer>&copy; 2019 Camper Cat</footer>
+</body>
+ 

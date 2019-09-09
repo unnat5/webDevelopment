@@ -1,0 +1,61 @@
+<!-- Use tabindex to add keyboard focus to an element
+	The HTML `tabindex` attribute has three distinct functions relating to an element's keyboard focus. Whe it's on a tag, it indicates that element can be focused on. The value(an integer that's positive,negative, or zero) determines the behavior.
+
+	Certain elements, such as links and form controls, automatically receive keyboard focus when a user tab through a page. It's in the same order as the elements come in the HTML source markup. This same fucntionality can be given to other elements , such as `div`, `span`, and `p`, by placing a `tabindex="0"` atrribute on them. Here's an example:
+
+	```
+	<div tabindex="0">I need keyboard focus!</div>
+	```
+
+	Note
+	A negative `tabindex` value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a `div` used for a pop-up window is activated), and is beyond the scopes of these challenges.
+
+ -->
+
+
+ <head>
+ 	<style type="text/css">
+ 		p:focus{
+ 			background-color: yellow;
+ 		}
+ 	</style>
+ </head>
+
+ <body>
+ 	<header>
+ 		<h1>Ninja Survey</h1>
+ 	</header>
+
+ 	<section>
+ 		<form>
+ 			<p tabindex="0">Instructions: Fill in ALL your information then click <strong>Submit</strong></p>
+
+ 			<label for="username">Username:</label>
+ 			<input type="text" name="username" id="username"><br>
+ 			<fieldset>
+ 				<legend>What level ninja are you?</legend>
+ 				<input type="radio" name="levels" value="newbie" id="newbie">
+ 				<label for="newbie">Newbie Kitten</label><br>
+ 				<input type="radio" name="levels" value="intermediate" id="intermediate">
+ 				<label for="intermediate">Developing Student</label><br>
+ 				<input type="radio" name="levels" value="master" id="master">
+ 				<label for="master">9<sup>th</sup> Life Master</label><br>
+ 			</fieldset><br>
+
+ 			<fieldset>
+ 				<legend>Select your favorite weapons:</legend>
+ 				<input type="checkbox" name="weapons" id="stars" value="stars">
+ 				<label for="stars">Throwing Stars</label><br>
+ 				<input type="checkbox" name="weapons" id="nunchucks" value="nunchucks">
+ 				<label for="nunchucks">Nunchucks</label><br>
+ 				<input type="checkbox" name="weapons" id="sai" value="sai">
+ 				<label for="sai">Sai Set</label><br>
+ 				<input type="checkbox" name="weapons" id="sword" value="sword">
+ 				<label for="sword">Sword</label><br>
+ 			</fieldset>
+ 			<br>
+ 			<input type="submit" name="submit" value="Submit">
+ 		</form>
+ 	</section>
+ 	<footer>&copy; 2019 Camper Cat</footer>
+ </body>

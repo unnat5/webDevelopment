@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Cat Photo App
+		</title>
+	</head>
+	<body>
+		<main>
+			<!--## Change the Color of Text
+			Now let's change the color of some of our text.
+
+			We can do this by changing the `style` of our `h2` element.
+
+			The property that is responsible for the color of an element's text is the `color` style property.
+
+			Here's how we would set our `h2` element's text color to blue:
+
+			<h2 style="color:blue;">xxxx</h2> 
+				
+			 -->
+
+			<!--  
+			<h2 style="color:red">CatPhotoApp</h2>
+			-->
+			<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+
+			<style type="text/css">
+				h2 {
+					color: blue;
+					font-family: "Lobster", monospace;
+					}
+				.red-text {color:red;}
+				p {
+					font-size: 16px;
+					font-family: "monospace";
+					line-height: 25px;
+				}
+				.smaller-image {width: 100px;}
+				.thick-green-border {
+					border-color: green;
+					border-width: 10px;
+					border-style: solid;
+					/*border-radius: 10px;*/
+					border-radius: 50%;
+				}
+				.silver-background{
+					background-color: silver;
+				}
+				#cat-photo-form{
+					background-color: green;
+				}
+				[type='checkbox']{
+					margin: 10px 0px 15px 0px;
+				}
+			</style>
+			<h2>CatPhotoApp<div style="color: red; font-size: 15px;">Beta</div></h2>
+			<!-- 
+				## Use CSS Selector to Style Elements
+				With CSS, there are hundreds of CSS `properties` that we can use to change the way an element looks on our page.
+
+				When we entered `<h2 style="color:red;">CatPhotoApp</h2>`, you were styling that individual `h2` element with `inline CSS`, which stands for `Cascading Style Sheets`.
+
+				That's one way to specify the style of an element, but there's a better way to apply `CSS`.
+
+
+				At the top of our code, create a `style` block like this:
+
+				```
+				<style>
+				</style>
+				```
+
+				Inside that style block, we can create a `CSS selector` for all `h2` elements. For example, if we wanted all h2 elements to be red, we would add a style rule that looks like this:
+
+				```
+				<style>
+					h2 {color:red;}
+				</style>
+				```
+
+				Note that it's important to have both opening and closing curly braces `{` and `}` around each element's style rule(s). We also need to make sure that our element's style definition is between the opening and closing style tags. Finally, be sure to add semicolon to end of each of our element's style rules.
+			 -->
+            
+			 <!--## Use a CSS Class to Style an Element
+			 	Classes are reusable styles that can be added to HTML elements.
+
+			 	Here's an example CSS class declaration:
+			 	```
+			 	<style>
+			 		.blue-text {color:blue;}
+			 	</style>
+				```
+			 	We can see that we've created a CSS class called `blue-text` within the `<style>` tag.
+
+			 	We can apply a class to an HTML element like this:
+
+			 	<h2 class="blue-text">CatPhotoApp</h2>
+
+			 	Note that in our CSS `style` element, class names start with a period. In our HTML elements class attribute, the class name does not include the period.
+			-->
+
+			<!-- ## Change the Font Size of an Element
+				Font size is controlled by the `font-size` CSS property, like this:
+
+				```
+				h1 { font-size: 30px;}
+				```
+			
+			-->
+
+			<!-- ## Set the Font Family of an Element
+				We can set which font an element should use, by using the `font-family` property.
+
+				For example, if we wanted to set our `h2` element's font to `sans-serif`, we would use the following CSS:
+
+				```
+					h2 {
+						font-family: sans-serif;
+					}
+				```
+			 -->
+
+			 <!-- ## Import a Google Font
+			 	In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts on the internet but, for this example we will focus on the Google Fonts library.
+
+			 	Google Fonts is free library of web fonts that we can use in our CSS by referencing the font's URL.
+
+			 	So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
+
+			 	To import a Google Font, we can copy the font(s) URL from the Google Fonts library and then paste it in our HTML. For this challenge, we'll import the `Lobster` font. To do this, copy the following code snippet and paste it into the top of our code editor (before the opening `style` element)
+
+			 	```
+			 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+			 	``` 
+
+			 	Now we can use the `Lobster` font in our CSS by using `Lobster` as the FAMILY_NAME as in the following example:
+			 	`font-family: FAMILY_NAME,GENERIC_NAME;`
+
+			 	The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
+
+			 	Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the "Open Sans" font, but not to use the Lobster font.
+				
+			  -->
+
+			 <!-- ## Specify How Fonts Should Degrade
+			 	There are several defaults fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
+
+			 	When one font isn't available, we can tell the browser to "degrade" to another font.
+
+			 	For example, if we wanted an element to use the `Helvetica` font, but degrade to the `sans-serif` font when `Helvetica` wasn't available, we will specify it as follows:
+
+			 	```
+			 	p {font-family: Helvetica, sans-serif;}
+			 	```
+			 	Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
+
+			  -->
+
+
+			 <!-- ## Size our Images
+			 	CSS has a property called `width` that controls an element's width. Just like with fonts, we'll use `px`(pixles) to specify the image's width.
+
+			 	For example. if we wanted to creae a CSS class called `larger-image` that gave HTML elements a width of 500 pixels, we'd use:
+
+			 	```
+			 	<style>
+			 		.larger-image { width: 500px;}
+			 	</style>
+			 	```
+
+
+			  -->
+
+			 <!-- ## Add Borders Around our Elements
+
+			 CSS borders have properties like `style`,`color` and `width` 
+
+			 For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:
+
+			 ```
+			 	<style>
+			 		.thin-red-border {
+						border-color: red;
+						border-width: 5px;
+						border-style: solid;
+			 		}
+			 	</style>
+			 ```
+			 Remember that we can apply multiple classes to an element using its `class` attribute, by separating each class name with a space. For example
+
+			 ```
+			 <img class = "class1 class2">
+			 ```
+			  -->
+
+			 <!-- ## Add Rounded Corners with border-radius
+
+			 Our cat photo currently has sharp corners. We can round them with a CSS property called `border-radius`.
+
+			 In addition to pixel, we can also specify the `border-radius` using percentage.
+			 -->
+
+			 <!-- ## Give a Background Color to a div Element
+
+			 	We can set an element's background color with the `background-color` property.
+
+			 	For example, if we wanted an element's background color to be green, we'd put this within our `style` element:
+
+			 	```
+			 		.green-background{
+						background-color: green;
+			 		}
+			 	``` 
+			  -->
+
+			  <!-- ## Set the id of an Element
+			  	In addition to classes, each HTML element can also have an `id` attribute.
+
+
+			  	There are several benefits to using `id` attributes: We can use an `id` to style a single element and later we'll learn that we can use them to select and modify specific elements with JavaScript.
+
+			  	`id` attributes should be unique. Browser won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same id attribute.
+
+			  	Here's an example of how we give our `h2` element the id of `cat-photo-app`:
+
+			  	```
+			  	<h2 id="cat-photo-app">
+			  	``` 
+			   -->
+
+			   <!-- ## Use an id Attribute to Style an Element
+
+			   One cool thing about `id` attributes is that, like classes, we can style them using CSS.
+
+			   However, an `id` is not reusable and should only be applied to the same element and have conflicting styles, the styles of the `id` will be applied.
+
+			   Here's an example of how we can take our element with the `id` attribute of `cat-photo-element` and give it the background color of green. In our `style` element:
+
+			   ```
+			   #cat-photo-element {
+					background-color: green;
+			   }
+			   ``` 
+			   Note that inside our `style` element, we always reference classes by putting a `.` in front of their names. We always reference ids by putting a `#` in front of their names.
+			    -->
+			 <!-- ## Use Attribute Selectors to Style Elements
+
+			 	We have been giving `id` or `class` attributes to elements that we wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can to select custom groups of elements to style.
+
+
+			 	Let's bring out CatPhotoApp again to practice using CSS Selectors.
+
+			 	For this challenge, you will use the `[attr=value]` attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute `type` and a corresponding value of `radio`:
+
+			 	```
+			 	[type='radio']{
+					margin: 20px 0px 20px 0px;
+			 	}
+			 	```
+
+					
+
+			  -->
+
+
+			
+			<a href="#footer">Jump to Bottom</a><!-- Internal link -->
+			<br>
+			<a href="#"><img class="smaller-image thick-green-border" src = "https://bit.ly/fcc-relaxing-cat" alt="Cat Image"></a>
+			
+		    <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
+		    <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+
+			<p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+
+			<p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>
+
+			
+
+			<p>View more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a></p>
+			
+
+			 <div class="silver-background">
+				 <p>Things Cat loves:</p>
+					 <ul>
+					 	<li>Fish</li>
+					 	<li>Milk</li>
+					 	<li>Box</li>
+					 </ul>
+				<p>Things cats hate:</p>
+					<ol>
+						<li>Water</li>
+						<li>Dogs</li>
+						<LI>thunder</LI>
+					</ol>
+			</div>
+			
+
+		 	<form action="/submit-cat-photo" id="cat-photo-form">
+				<input type="text" required placeholder="cat photo URL">
+				<button type="submit">Submit</button><br>
+				<label for="indoor">
+					<input id="indoor"type="radio" name="indoor-outdoor" checked>Indoor
+				</label>
+				<label for="outdoor">
+					<input id="outdoor"type="radio" name="indoor-outdoor">Outdoor
+				</label><br>
+
+				<label>
+					<input type="checkbox" name="personality" checked>Loving
+				</label>
+
+				<label>
+					<input type="checkbox" name="personality">Caring
+				</label>
+
+				<label>
+					<input type="checkbox" name="personality">Active
+				</label>
+			</form>
+
+
+		</main>
+
+		<footer id="footer">Copyright Cat Photo App</footer>
+
+	</body>
+</html>

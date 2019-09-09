@@ -1,0 +1,33 @@
+<!-- Use the flex Shorthand Property
+
+	There is a shortcut availbale to set several flex properties at once. The `flex-grow`, `flex-shrink`, and `flex-basis` properties can all be set together by using the `flex` property.
+
+	For example, `flex: 1 0 10px;` will set the item to `flex-grow: 1;`, `flex-shrink: 0;`, and `flex-basis: 10px;`
+
+	The default property setting are 
+	`flex: 0 1 auto;`
+
+
+-->
+
+<style type="text/css">
+	#box-container{
+		display: flex;
+		height: 500px;
+	}
+	#box-1{
+		background-color: dodgerblue;
+		height: 200px;
+		flex: 2 2 150px;
+	}
+	#box-2{
+		background-color: orangered;
+		height: 200px;
+		flex: 1 1 150px;
+	}
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>

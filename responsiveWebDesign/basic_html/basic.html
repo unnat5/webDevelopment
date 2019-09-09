@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<h2>CatPhotoApp</h2>
+<!--  
+## Declare the DOCTYPE of an HTML Document
+	<!DOCTYPE html>
+	<html>
+		<head>
+			metadata element
+		</head>
+		<body>
+			page content
+		</body> 
+	</html>
+-->
+
+
+<!-- The main HTML5 tag helps search engines and other developers find the main 
+content of our page -->
+<head>
+	<title>
+		The Cat Photo App
+	</title>
+</head>
+<body>
+<main>
+	<!-- Note that `img` elements are self-closing
+
+	All `img` element must have an `alt` attribute. The text inside an `alt` attribute 
+	is used for sceen reader to improve accessibility and is displayed if the 
+	image fails to load 
+
+	Note: If the image is purely decorative, using an empty alt attribute is a best practice.
+
+
+
+	-->
+	<a href="#footer">Jump to Bottom</a><!-- Internal link -->
+	<br>
+	<a href="#"><img src = "https://bit.ly/fcc-relaxing-cat" alt="Cat Image"></a>
+	<!-- We can use `anchor` elements to link to content outside of our web page 
+
+
+	anchor elements need a destination web address called an href attribute. They also need anchor text.-->
+
+	<!-- 
+		Anchor elements can also be used to create internal links to jump to different sections within a webpage.
+
+		To create an internal link, you assign a link's `herf` attribute to a hash symbol `#` plus the value of the `id` attribute for the element that you want to internally link to, usually further down the page. You then need to add the same `id` attribute to the element.
+
+		Below is an example of an internal anchor link and its target element:
+
+		```
+		<a herf="#contacts-header">Contacts</a>
+		...
+		<h2 id="contacts-header">Contacts</h2>
+		```
+
+		When users click the Contacts link, they'll be taken to the section of the webpage with the Contacts header element.
+
+		---
+
+		Change your external link to an internal link by changing the `herf` attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
+
+		Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
+
+		Then add an `id` attribute with a value of "footer" to the `<footer>` element at the bottom of the page.
+
+	-->
+
+    <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
+    <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+
+	<p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+
+	<p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>
+
+	<!-- ## Anchor element within a Paragraph
+	we can nest links within other text elements.
+
+	```
+	<p>Here's a <a target="_blank" href="http://freecodecamp.org">link to freecodecamp.org</a> for you to follow.</p>
+	```
+
+	`target`is an anchor tag attribute that specifies where to open the link and the value "_blank" specifies to open the link in a new tab
+		
+	-->
+
+	<p>View more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a></p>
+
+	<!-- 
+		Sometimes you want to add `a` elements to your website before you know where they will link.
+
+		This is also handy when you're changing the behavior of a link using `JavaScript`, which we'll learn about later.
+
+		If `href` attribute value with a '#', to create a dead link.
+	 -->
+	<a href="#">Dead Link</a>
+	<!-- ## Turn an Image into a Link
+		We can make elements into links by nesting them within an `a` element.
+	 -->
+
+
+	<!-- Create a Bulleted unordered list
+		HTML has a special element for creating `unordered lists`, or bullet point style lists.
+
+		Unordered lists start with an opening <ul> element, followed by any number of <li> elements. Finally, unordered lists close with a </ul>
+	 -->
+
+	 <!-- ## Nest Many Elements within a Single div Element
+
+	 	The `div` element, also known as a division element, is a general purpose container for other elements.
+
+	 	The `div` element is probably the most common used HTML element of all.
+
+	 	Just like any other non-self-closing element, we can open a `div` element with `<div>` and close it on another line with `</div>`
+
+
+	  -->
+	 <div>
+		 <p>Things Cat loves:</p>
+			 <ul>
+			 	<li>Fish</li>
+			 	<li>Milk</li>
+			 	<li>Box</li>
+			 </ul>
+
+		<!--Create an Ordered List  
+			<ol>
+				<li>Garfield</li>
+				<li>Sylvester</li>
+			</ol>	
+		-->
+		<p>Things cats hate:</p>
+			<ol>
+				<li>Water</li>
+				<li>Dogs</li>
+				<LI>thunder</LI>
+			</ol>
+	</div>
+	<!-- ##Create a Text Field 
+		Now let's create a web form.
+		Input elements are a convenient way to get input from our user.
+
+		We can create a text input like this:
+		`<input type = "text">`
+		Note that `input` element are self-closing
+
+	-->
+	
+
+	<!-- Create a Form Element 
+		We can build a web forms that actually submit data to a server using nothing more than pure HTML. We can do this by specifying an action on our `form` element. 
+		example 
+		`<form action="/url-where-we-want-to-submit-data"></form>`
+
+		Let's add a `submit` button to our form. Clicking this button will send the data form our form to the URL we have specified with our form's `action` attribute
+
+		<button type="submit">This button submits the form</button>
+
+		We can require specific form fields so that our user will not be able to submit our form unitl he or she filled them out.
+
+		For example, if we wanted to make a text input field required, we can just add the attribute `required` within our `input` element, like this: <input type="text" required>
+	-->
+
+
+<!-- ## Create a Set of Radio Buttons
+	We can use `radio buttons` for equations where we want the user to only give us one answer out of multiple options.
+
+	Radio buttons are a type of `input`
+
+	Each of our radio buttons can be nested within its own `label` element. By wrapping an `input` element inside of a `label` element it will automatically associate the radio button input with the label element surrounding it.
+
+	All related radio buttons should have the same `name` attribute to create a radio button group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.
+
+	Here's an example of radio button
+	```
+	<label>
+		<input type="radio" name="indoor-outdoor">Indoor
+	</label>
+	```
+	It is considered best practice to set a `for` attribute on the `label` element, with a value that matches the value of the `id` attribute of the `input` element. This allows assistive technologies to create a linked relationship between the label and the child `input` element.
+
+	<label for="indoor">
+		<input id="indoor" type="radio" name="indoor-outdoor">Indoor
+	</label>
+ -->
+ <!-- # Create a Set of Checkboxes
+ 		Forms commonly use `checkboxes` for questions that may have more than one answer.
+
+ 		Checkboxes are a type of input
+
+ 		Each of our checkboxes can be nested within its own `label` element. By wrapping an `input` element inside the of a `label` element it will automatically associate the checkbox input with the label element surrounding it.
+
+ 		All related checkbox inputs should have the same `name` attribute.
+
+ 		It is considered best practice to explicitly define the relationship between a checkbox `input` and its corresponding `label` by setting the `for` attribute on the `label` element to match the `id` attribute of the associated `input` element.
+
+ 		<label for="loving">
+ 			<input id="loving" type="checkbox" name="personality">Loving
+ 		</label>
+
+  -->
+  <!-- # Checkboxes by Default
+  	We can set a checkbox or radio button to be checked by default using the `checked` attribute
+  	Example
+  	<input type="radio" name="test-name" checked>
+
+   -->
+
+ 	<form action="/submit-cat-photo">
+		<input type="text" required placeholder="cat photo URL">
+		<button type="submit">Submit</button>
+		<label for="indoor">
+			<input id="indoor"type="radio" name="indoor-outdoor" checked>Indoor
+		</label>
+		<label for="outdoor">
+			<input id="outdoor"type="radio" name="indoor-outdoor">Outdoor
+		</label>
+
+		<label>
+			<input type="checkbox" name="personality" checked>Loving
+		</label>
+
+		<label>
+			<input type="checkbox" name="personality">Caring
+		</label>
+
+		<label>
+			<input type="checkbox" name="personality">Active
+		</label>
+	</form>
+
+
+</main>
+
+<footer id="footer">Copyright Cat Photo App</footer>
+<!-- This how we comment in HTML-->	
+</body>
+</html>

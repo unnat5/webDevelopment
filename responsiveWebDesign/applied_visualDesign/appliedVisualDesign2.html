@@ -1,0 +1,224 @@
+<!--Adjust the Color of Various Elements to Complementary Colors
+The complementary colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.  
+-->
+<!-- ## Adjust the Hue of a Color
+Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the `hsl()` property as an alternative way to pick a color by directly stating these characteristics.
+
+**Hue** is what people generally think of as `color`. If we picture a spectrum of color starting with red on the left, moving through green in the middle, and blue on the right, the hue is where a color fits along the line. In `hsl()`, hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.
+
+Saturation is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.
+
+Lightness is the amoutn of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50 % is the normal color.
+
+
+Here are few examples of using `hsl()` with fully-saturated, normal lightness colors:
+
+```
+COLOR.       HSL
+red          hsl(0,100%,50%)
+yellow       hsl(60,100%,50%)
+green        hsl(120,100%,50%)
+cyan         hsl(180,100%,50%)
+blue         hsl(240,100%,50%)
+magenta      hsl(300,100%,50%)
+```  
+
+
+
+-->
+
+<!--  
+Adjust the Tone of a Color
+
+The `hsl()` option in CSS also makes it easy to adjust the tone of a color. Mixing white with pure hue creates a tint of that color, and adding black will make a shade.
+Alternatively, a tone is produced by adding gray or by both tinting and shading. Recall that the 's' and 'l' of hsl() stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.
+
+
+-->
+
+<!-- ## Create a Gradual CSS Linear Gradient
+
+Applying a color on HTML elements in not limited to one flat hue. CSS provides the ability to use color transitions,otherwise known as gradients, on elements. This accessed through the `background` property's `linear-gradient()` function. Here is the general syntax:
+```
+	background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
+```  
+The first argument specifies the direction from which color transition starts -  it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.
+
+Example:
+```
+background: linear-gradient(90deg,red,yellow,rgb(204,204,255));
+```
+
+
+-->
+
+<!--# Use a CSS Linear gradient to create a striped element
+
+The `repeating-linear-gradient()` function is very similar to `linear-gradient()` with the major difference that it repeats the specified gradient pattern. `repeating-linear-gradient()` accpets a variety of values, but for simplicity, we'll work with an angle value and color stop values in this challenge.
+
+The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.
+
+In the example demonstrated in the code editor the gradient starts with the color `yellow` at 0 pixles which blends into the second color `blue` at 40 pixles away from the start. Since the next color stop is also at 40 pixles, the gradient immediately changes to the third color `green`, which itseld blends into the fourth color value `red` as that is 80 pixels away from the beginning of the gradient.
+
+```
+	0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
+``` 
+
+If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.
+-->
+
+<!--  ## Create Texture by adding a subtle pattern as a background image
+	One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as we don't want the background to stand out too much, and take away from the foreground. The `background` property supports the `url()` function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.
+
+-->
+<!--## Use the CSS Transform scale property to change the size of an element 
+
+	To change the scale of an element, CSS has the `transfrom` property, along with the `scale()` function. The following code example doubles the size of all the paragraph elements on the page:
+
+	```
+		p {
+			transform: scale(2);
+		}
+	```   
+-->
+
+<style type="text/css">
+
+	body{
+		background-color: white;
+		/*background: url("https://i.imgur.com/MJAkxbh.png")*/
+	}
+	header {
+		background-color: #09a7a1;
+		color: white;
+		padding: 0.25em;
+	}
+	h2{
+		color: #09a7a1;;
+	}
+	button {
+		background-color: #ff790e;
+	}
+	footer{
+		background-color: #09a7a1;;
+		color: white;
+		padding: 0.5em;
+
+
+	}
+	/*I don't know why its not working*/
+	div:hover{
+		transform: scale(1.1);
+	}
+	.div_class{
+		/*display: inline-flex;*/
+		height: 100px;
+		width: 100px;
+		margin: 50px auto;
+	}
+	nav {
+		background-color: hsl(180,80%,25%);
+
+	}
+
+	nav ul {
+		margin: 0px;
+		padding: 5px 0px 5px 30px;
+	}
+
+	nav li {
+		display: inline;
+		margin-right: 20px; 
+	}
+  a {
+
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .color_gradient{
+  	border-radius: 20px;
+  	width: 70%;
+  	height: 400px;
+  	margin: 50px auto;
+  	background: linear-gradient(35deg,#cff,#fcc);
+  }
+
+  .color_repeating_gradient{
+  	border-radius: 20px;
+  	width: 70%;
+  	height: 400px;
+  	margin: 50px auto;
+/*  	background: repeating-linear-gradient(90deg,
+  		yellow 0px,
+  		blue 40px,
+  		green 40px,
+  		red 80px);*/
+  		background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );	
+  }
+
+  .ball {
+  	width: 40px;
+  	height: 40px;
+  	margin: 50 auto;
+  	/*display: inline-flex;*/
+  	background: linear-gradient(
+  			35deg,
+  			#cff,
+  			#fcc
+
+  		);
+  	border-radius: 50%;
+/*  	position: fixed;
+  	bottom: 30px;*/
+  }
+  #ball1 {
+  	left: 20%;
+  }
+  #ball2 {
+  	left: 65%
+  	transform: scale(1.7);
+  }
+</style>
+<header>
+	<h1>Cooking with FCC!</h1>
+	<nav>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Classes</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+	<article>
+		<h2>Machine Learning in the Kitchen</h2>
+		<p>Join this two day workshop that walks through how to implement cutting-edge snack-getting algorithms with a command line interface. Coding usually involves writing exact instructions, but sometimes you need your computer to execute flexible commands, like <code>fetch Pringles</code>.</p>
+		<button>Sign Up</button>
+	</article>
+	<article>
+		<h2>Bisection Vegetable Chopping</h2>
+		<p>This week-long retreat will level-up your coding ninja skills to actual ninja skills. No longer is the humble bisection search limited to sorted arrays or coding interview questions, applying its concepts in the kitchen will have you chopping carrots in O(log n) time before you know it.</p>
+		<button>Sign Up</button>
+	</article>
+
+</main>
+	<div class="div_class"style="background-color: hsl(240,100%,50%) !important;">
+		<!-- <h2>sda</h2> -->
+	</div>
+	<div class="div_class" style="background-color: hsl(180,100%,50%);"></div>
+	<div class="div_class" style="background-color: hsl(120,100%,50%);"></div>
+
+	<div class="color_gradient"></div>
+	<div class="color_repeating_gradient"></div>
+
+	<div class="ball" id="ball1"></div>
+	<div class="ball" id="ball2"></div>
+<br>
+<footer>&copy; 2018 FCC Kitchen</footer>

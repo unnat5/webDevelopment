@@ -1,0 +1,69 @@
+ <!--  Use the CSS Transform Property skewX to Skew an element along the x-axis
+  The next function of the `transform` property is `skewX()` which skews the selected element along its X(horizontal) axis by a given degree.
+
+  The following code skews the paragraph element by -32 degrees along the X axis.
+
+  p {
+    transform: skewX(-32deg);
+  }
+ -->
+
+ <!--  ## Applied Visual Design: Create a Graphic using CSS
+  By manipulating different selectors and properties, we can make iteresting shapes. One of the easier ones to try is a crescent moon shape. For this challenge we need to work with `box-shadow` property that sets the shadow of an element, along with the `border-radius` property that control roundness of the element's corners.
+
+  We will create a round, transparent object with a crisp shadow that is slightly offset to the side -  the shadow is actually going to be the moon shape we see.
+
+  In order to create a round object, the `border-radius` property shouldbe set to a value of 50%
+
+  We may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`,'offset-y','blur-radius','spread-radius' and a color value in that order. The `blur-radius` and `spread-radius` values are optional.
+ -->
+
+
+<style>
+  div { 
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    );
+  }
+
+  div:hover{
+    transform: scale(2.1);
+  }
+
+    #top {
+    background: red !important;
+    transform: skewY(-10deg);
+  }
+  #bottom {
+    background: blue;
+    transform: skewX(24deg);
+    
+  }
+  .center{
+    position: absolute;
+    margin: auto;
+    top:500;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0px 0px blue;  
+  }
+  
+  
+</style>
+
+<div></div>
+<div id="top" ></div>
+
+<div id="bottom"></div>
+<div class="center"></div>

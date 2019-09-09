@@ -1,0 +1,309 @@
+<!-- ## Style the HTML body element
+	Now let's start fresh and talk about CSS inheritance
+
+	Every HTML page has a `body` element.
+
+	We can prove that the body elements exists here by giving it a `background-color` of black.
+
+
+ -->
+ <!-- ## Inherit Styles from the Body Element
+ 	Now we've proven that every HTML page has a `body` element, and that its `body` element can also be styled with CSS.
+
+ 	Remember, we can style our `body` element just like any other HTML element, and all our other elements will inherit our `body` element's styles.
+
+
+ 	First, create a `h1` element with the text `Hello World`
+
+ 	Then, let's give all elements on our page the color of `green` by adding `color: green;` to your `body` element's style declaration.
+
+ 	Finally, give our `body` element the font-family of `monospace` by adding `font-family: monospace;` to the our `body` element's style declaration. 
+
+  -->
+  <!--## Prioritize one style over another 
+  	Sometimes our HTML elements will receive multiple styles that conflict  with one another.
+
+  	For example, our `h1` element can't be both green and pink at the same time.
+
+  	Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class override the `body` element's `color:green;` CSS property?
+
+
+  	Create a CSS class called pink-text that gives an element the color pink.
+
+	Give your h1 element the class of pink-text.
+
+   -->
+   <!-- ## Override Styles in Subsequent CSS
+
+   		Our "pink-text" class overrode our body element's CSS declaration!
+
+   		We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
+
+
+
+   		Create an additional CSS class called blue-text that gives an element the color blue. Make sure it's below your pink-text class declaration.
+
+		Apply the blue-text class to your h1 element in addition to your pink-text class, and let's see which one wins. 
+
+    -->
+    <!-- ## Override Class Declarations by styling ID attributes
+
+    	We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.
+
+    	But we're not done yet. There are other ways that we can override CSS. Do we remember id attributes?
+
+    	Let's override our `pink-text` and `blue-text` classes, and make our h1 element orange, by giving an id and then styling that id.
+
+    	Give your h1 element the id attribute of orange-text. Remember, id styles look like this:
+
+	<h1 id="orange-text">
+
+	Leave the blue-text and pink-text classes on your h1 element.
+
+	Create a CSS declaration for your orange-text id in your style element. Here's an example of what this looks like:
+
+	```
+	#brown-text {
+  		color: brown;
+	}
+	```
+
+	Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+     -->
+
+
+    <!-- Override Class Declaration with Inline styles
+
+    	So we've have proven that id declaration class declarations, regardless of where they are declared in our `style` element CSS.
+
+
+    	There are other ways that we can override CSS. Do we remember inline styles?
+
+    	Use an `inline style` to try to make our `h1` element white. Remember, in line styles look like this:
+
+    	```
+    		<h1 style="color: green;"
+    	``` 
+    	Leave the blue-text and pink-text classes on your h1 element.
+     -->
+
+     <!-- ## Override All Other Styles by using Important 
+
+     	Yay! We just proved that inline styles will override all the CSS declarations in our `style` element.
+
+     	But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why ever want to override CSS.
+
+     	In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use `!important`
+
+     	Let's go all the way back to our `pink-text` class declaration. Remember that our `pink-text` class was overriden by subsequent class declarations, id declarations, and inline styles.
+	-->
+
+	<!-- ## Use Hex Code for Specific Colors
+
+		Did we know there are other ways to represent colors in CSS> One of these ways is called hexadecimal code, or `hex code` for short.
+
+		We usually use `decimals`, or base 10 numbers, which use the symbols 0 to 9 for each digit. `Hexadeciamals`(or `hex`) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent the values zero to nine. Then A,B,C,D,E,F represents the values ten to fifteen. Altogether, 0 to F can represent a digit in hexadecimal, giving us 16 total possible values.
+
+		In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red(R),green(G), and blue (B) components. For example `#000000` is black and is also the lowest possible value. 
+
+		```
+			body {
+				color: #000000;
+			}
+		```  
+
+	 -->
+
+	<!-- ## Use Hex Code to Mix Colors
+		To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.
+
+
+		From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!
+
+		For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being #FFA500.
+
+		The digit 0 is the lowest number in hex code, and represents a complete absence of color.
+
+		The digit F is the highest number in hex code, and represents the maximum possible brightness.
+
+	  -->
+
+	<!-- ## Use Abbreviated Hex Code
+	Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.
+
+	For example, red's hex code #FF0000 can be shortened to #F00. This shortened form gives one digit for red, one digit for green, and one digit for blue.
+
+
+	This reduces the total number of possible colors to around 4,000. But browsers will interpret #FF0000 and #F00 as exactly the same color. 
+
+
+	 -->
+
+	 <!-- ## Use RGB values to color Elements
+	 	Another way you can represent colors in CSS is by using `RGB` values.
+
+	 	The RGB value for black looks like this:
+
+	 	```
+	 		rgb(0, 0, 0)
+	 	```
+
+	 	The RGB value for white looks like this:
+
+	 	```
+	 	rgb(255,255,255)
+	 	```
+
+	 	Instead of using six hexadecimal digits like you do with hex code, with RGB you specify the brightness of each color with a number between 0 and 255.
+
+		If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So RGB, which starts counting from zero, has the exact same number of possible values as hex code.
+
+		Here's an example of how you'd change the body background to orange using its RGB code.
+
+		```
+		body {
+			background-color: rgb(255, 165, 0);
+		}
+		```
+			
+
+	  -->
+	  <!-- ## Create a custom CSS variable 
+		To create a CSS variable, we just need to give it a `name` with `two dashes` in front of it and assign it a `value` like this:
+		```
+			--penguin-skin: gray;
+		```
+		This will create a variable named `--penguin-skin` and assign it the value of `gray`.
+
+		Now we can use that variable elsewhere in our CSS to change the value of other elements to gray.
+	  -->
+
+	  <!-- ## Use a custom CSS variable
+
+	  After we create our variable, we can assign its value to other css properties by referencing the name we gave it.
+
+	  ```
+	  background: var(--penguin-skin);
+	  ``` 
+	  This will change the background of whatever element we are targeting to gray becayse that is the value of the `--penguin-skin` variable.
+
+	  Note that styles will not be applied unless the variable names are an exact match.
+
+	   -->
+
+	   <!-- ## Attach a value to a CSS Variable
+
+	   When using our variable as a CSS property value, we can attach a fallback value that our browser will revert to if the given variable is invalid.
+
+	   Note: This fallback is not used to increase browser compatibility, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find our varaible.
+
+
+	   Here's how you do it:
+
+	   ```
+	   background: var(--penguin-skin, black);
+	   ``` 
+
+	   This will set background to black if our variable wasn't set.
+
+	   Note that this can be useful for debugging.
+
+
+	    -->
+
+	    <!-- ## Improve Compatibility with Browser Fallbacks
+
+	    When working with CSS we will likely run into browser compatibility issuses at some point. This is why it's important to provided browser fallbacks to avoid potential problems.
+
+	    When our browser parses the CSS of a webpage, it ignores any properties that it doesn't recognize or support. For example, if our use a CSS variable to assign a background color on a site, Internet Explorer will ignore the background color because it does not support CSS variables. In that case, the browser will use whatever value it has for that property. If it can't find any other value set for that property, it will revert to the default value, which is typically not ideal.
+
+	    This means that if we do want to provide a browser fallback, it's as easy as providing another more widely supported value immediately before our declaration. That way an older browser will have something to fall back on, while a newer browser will just interpret whatever declaration comes later in the cascade.
+
+	     -->
+
+	    <!-- ## Cascading CSS variable 
+			When we create a variable, it becomes available for us to use inside the element in which we create it. It also becomes available within any elements nested within it. This effect is known as cascading.
+
+			Because of cascading, CSS variable are often defined in the :root element.
+
+			We can think of the `:root` element as a container for our entire HTML document, in same way that an html element is a container for the body element.
+
+			By creating your variables in `:root`, they will be available throughout the whole web page.
+
+
+	    -->
+
+	    <!--  ## Change a variable for a specific area
+	    	When we create our variables in `:root` they will set the value of that variable for the whole page.
+
+	    	We can then over-write these variables by setting them again within a specific element.
+
+
+	     -->
+
+	     <!-- ## Use a media query to change a variable
+
+	     	CSS variable can simplify the way we use media queries.
+
+	     	For instance, when our screen is smaller or larger than our media query break point, we can change the value of a variable, and it will apply its style wherever it is used. 
+
+			```
+
+			@media (max-width: 350px) {
+			    :root {
+			      
+			      /* add code below */
+			      --penguin-size: 200px;
+			      --penguin-skin: black;
+			      /* add code above */
+			      
+			    }
+			  }
+			```
+			It's like if statement.
+	      -->
+
+
+<style type="text/css">
+	body {
+		background-color: #000000;
+		color: green;
+		font-family: monospace;
+	}
+	.pink-text {
+		color: pink !important;
+	}
+
+	.blue-text {
+		color: blue;
+	}
+
+	#orange-text{
+		color: orange;
+	}
+
+	.red-text {
+    color: #ff0000;
+  }
+  .green-text {
+    color: #00ff00;
+  }
+  .dodger-blue-text {
+    color: #1e90ff;
+  }
+  .orange-text {
+  	/*Variable example*/
+  	--orangevariable: #ffa500;
+    color: var(--orangevariable);
+  }
+
+</style>
+<h1 class= "pink-text blue-text" id="orange-text" style="color: white;">Hello World!</h1>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
