@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+		body,html{
+			background-color: purple;
+			font-family: 'Raleway', Helvetica, sans-serif;
+			text-align: right;
+		}
+
+		#main-box{
+			width: 85%;
+			display: flex;
+			background-color: rgb(255,255,255);
+			border-radius: 5px;
+			/*position: relative;*/
+			flex-direction: column;
+			align-items: center;
+			margin: 0px auto;
+		}
+
+		#row-container{
+			display: flex;
+			/*background-color: orange;*/
+			/*position: absolute;*/
+			
+			width: 100%;
+			padding: 5px;
+
+
+
+		}
+
+		#left-container{
+			display: flex;
+			justify-content: flex-end;
+			/*background-color: blue;*/
+			align-items: flex-start;
+			width: 50%;
+			font-size: 110%;
+		}
+
+		#right-container{
+			display: flex;
+			/*margin-left: 10px;*/
+			padding-left:  10px;
+			/*background-color: green;*/
+			width: 50%;
+			align-items: flex-start;
+		}
+
+		#right-container .input-field {
+			height: 20px;
+  			width: 70%;
+  			max-width:290px; 
+  			padding: 5px;
+  			/*margin: 10px;*/
+  			margin-left: 10px;
+  			border: 1px solid #c0c0c0;
+  			border-radius: 2px;
+		}
+
+		#survey-form{
+			display: flex;
+			height: 100%;
+			width: 100%;
+			flex-direction: column;
+		}
+
+		#right-container #dropdown{
+			height: 35px;
+  			width: 50%;
+  			max-width:290px; 
+  			padding: 5px;
+  			margin-left: 10px;
+  			border: 1px solid #c0c0c0;
+  			border-radius: 2px;
+
+		}
+		.elem-box {
+
+		  display: flex;
+		  align-items: center;
+		  flex-direction: row;
+		  justify-content: flex-start;
+		  padding-bottom: 10px;
+		  margin-left: -30px; 
+		}
+
+		.submit-button{
+			background-color: #59ace0;
+  			border-radius: 4px;
+  			color: white;
+  			font-size: 1em;
+  			height: 40px;
+  			width: 96px;
+  			margin: 10px;
+  			border: 0px solid;
+
+		}
+
+		.button-div{
+			display: flex;
+			justify-content: center;
+		}
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="main-box">
+		<header>
+			<h1 id="title" align="center"><strong>Survey Form</strong></h1>
+			<p id="description">Let us know how we can improve freeCodeCamp</p>
+		</header>
+		<form id="survey-form" action="#" method="GET">
+			
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="name" id="name-label">* Name:</label>
+					
+				</div>
+				<div id="right-container">
+					<input type="text" name="Name" id="name" placeholder="Enter your name" class="input-field" required>
+				</div>
+			</div>
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="email" id="email-label">* Email:</label>
+					
+				</div>
+				<div id="right-container">
+					<input type="email" name="email" id="email" placeholder="Enter your Email" class="input-field" required>
+				</div>
+			</div>
+
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="number" id="number-label">* Age:</label>
+					
+				</div>
+				
+				<div id="right-container">
+					<input type="number" name="age" id="number" placeholder="Age" min="1" max="125" class="input-field" required>
+				</div>
+			</div>
+
+
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="dropdown" id="job-label">Which option best describes your current role</label>
+					
+				</div>
+				
+				<div id="right-container">
+					<select id="dropdown" name="currentPos" class="dropdown">
+						<option disabled selected value>Select an option</option>
+						<option value="student">Student</option>
+						<option value="learner">Full Time Learner</option>
+						<option value="job">Full Time Job</option>
+						<option value="preferNo">Prefer no to say</option>
+						<option value="other">Other</option>
+						
+					</select>
+				</div>
+			</div><br>						
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="number" id="radio-label">* How likely is that you would recommend freeCodeCamp to friend?</label>
+					
+				</div>
+				
+				<div id="right-container">
+
+
+					<ul style="list-style: none; text-align: left; margin-top: -1px;">	
+						<li class="elem-box"><input type="radio" name="recommend" class="userRating" id="def" value="Definitely"><label for="def">Definitely</label></li>
+
+
+						<li class="elem-box">
+							<input type="radio" name="recommend" id="not" class="userRating" value="Not Sure">
+							<label for="not">Not Sure</label>
+						</li>
+						<li class="elem-box">
+							<input type="radio" name="recommend" id="may" class="userRating" value="Maybe">
+							<label for="may">Maybe</label>
+						</li>
+					</ul>
+
+
+					
+				</div>
+			</div>
+
+
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="dropdown" id="job-label">What do you like most in FCC:</label>
+					
+				</div>
+				
+				<div id="right-container">
+					<select id="dropdown" name="what-you-like" class="dropdown">
+						<option disabled selected value>Select an option</option>
+						<option value="challenges">Challenges</option>
+						<option value="projects">Projects</option>
+						<option value="community">Community</option>
+						<option value="OpenSource">Open Source</option>
+						
+					</select>
+				</div>
+			</div>	
+			<br>
+
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label for="number" id="radio-label">Things that should be improved in the future<br>(Check all that apply)</label>
+					
+				</div>
+				
+				<div id="right-container">
+
+
+					<ul style="list-style: none; text-align: left; margin-top: -1px;">	
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Front-end Projects" id="front-end"><label for="front-end">Front-end Projects</label></li>
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Back-end Projects" id="back-end"><label for="back-end">Back-end Projects</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Data Visualization" id="data"><label for="data">Data Visualization</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Challenges" id="challenges"><label for="challenges">Challenges</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Open Source Community" id="open-source"><label for="open-source">Open Source Community</label></li>
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Gitter help rooms" id="gitter"><label for="gitter">Gitter help rooms</label></li>
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Videos" id="videos"><label for="videos">Videos</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="City Meetups" id="meetups"><label for="meetups">City Meetups</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Wiki" id="wiki"><label for="wiki">Wiki</label></li>
+
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Forum" id="forum"><label for="forum">Forum</label></li>
+
+						<li class="elem-box"><input type="checkbox" name="improvement" value="Additional Courses" id="additional"><label for="additional">Additional Courses</label></li>																														
+
+
+					</ul>
+
+
+					
+				</div>
+			</div>
+
+
+			<div id="row-container">
+
+				<div id="left-container">
+					<label id="suggestions">Any Comments or Suggestions?</label>
+					
+				</div>
+				
+				<div id="right-container">
+					<textarea id="comments" class="input-field" style="height: 50px;resize: vertical;" placeholder="Enter your comment here..."></textarea>
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<div class="button-div" id="row-container">
+				<input type="submit" name="submit-button" value="Submit" class="submit-button" align="center" id="submit">
+			</div>
+
+
+
+			<br>
+			<br>
+			<br>
+
+
+
+		</form>
+		
+	</div>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
+
+		
