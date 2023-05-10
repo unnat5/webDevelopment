@@ -1,0 +1,22 @@
+.failure, .warning, .sucess {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.sucess {
+  background-color: green;
+}
+
+.warning {
+  background-color: orange;
+}
+
+.failure {
+  background-color: red;
+}
+
+/*# sourceMappingURL=inheritance.css.map */
