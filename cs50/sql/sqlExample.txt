@@ -1,0 +1,123 @@
+(base) unnatsingh@Unnats-MacBook-Air-2 sql % touch flights.sql
+(base) unnatsingh@Unnats-MacBook-Air-2 sql % sqlite3 flights.sql 
+SQLite version 3.39.3 2022-09-05 11:02:23
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE filght (
+(base) unnatsingh@Unnats-MacBook-Air-2 sql % 
+(base) unnatsingh@Unnats-MacBook-Air-2 sql % sqlite3 flights.sql
+SQLite version 3.39.3 2022-09-05 11:02:23
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE flights (
+   ...>    id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...>    origin TEXT NOT NULL,
+   ...>    destination TEXT NOT NULL,
+   ...>    duration INTEGER NOT NULL);
+sqlite> .tables
+flights
+sqlite> SELECT * FROM flights;
+sqlite> INSERT INTO flights
+   ...>   (origin, destination, duration)
+   ...>   VALUES ("New York", "London", 415);
+sqlite> SELECT * FROM flights;
+1|New York|London|415
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("Shanghai", "Paris", 760);
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("Istanbul", "Tokyo", 700);
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("New York", "Paris", 435);
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("Moscow", "Paris", 245);
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("Lima", "New York", 455);
+sqlite> SELECT * FROM flights
+   ...> ;
+1|New York|London|415
+2|Shanghai|Paris|760
+3|Istanbul|Tokyo|700
+4|New York|Paris|435
+5|Moscow|Paris|245
+6|Lima|New York|455
+sqlite> .mode columns
+sqlite> .headers yes
+sqlite> SELECT * FROM flights;
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       415     
+2   Shanghai  Paris        760     
+3   Istanbul  Tokyo        700     
+4   New York  Paris        435     
+5   Moscow    Paris        245     
+6   Lima      New York     455     
+sqlite> SELECT * FROM flights WHERE origin = "New York";
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       415     
+4   New York  Paris        435     
+sqlite> SELECT * FROM flights WHERE duration > 500;
+id  origin    destination  duration
+--  --------  -----------  --------
+2   Shanghai  Paris        760     
+3   Istanbul  Tokyo        700     
+sqlite> SELECT * FROM flights WHERE duration > 500 AND destination = "Paris";
+id  origin    destination  duration
+--  --------  -----------  --------
+2   Shanghai  Paris        760     
+sqlite> SELECT * FROM flights WHERE origin IN ("New York", "Lima");
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       415     
+4   New York  Paris        435     
+6   Lima      New York     455     
+sqlite> SELECT * FROM flights WHERE origin LIKE "%a%";
+id  origin    destination  duration
+--  --------  -----------  --------
+2   Shanghai  Paris        760     
+3   Istanbul  Tokyo        700     
+6   Lima      New York     455     
+sqlite> UPDATE flights SET duration = 430 WHERE origin = "New York" AND destination = "London";
+sqlite> SELECT * FROM flights;
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       430     
+2   Shanghai  Paris        760     
+3   Istanbul  Tokyo        700     
+4   New York  Paris        435     
+5   Moscow    Paris        245     
+6   Lima      New York     455     
+sqlite> DELETE FROM flights WHERE destination = "Tokyo";
+sqlite> SELECT * FROM flights;
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       430     
+2   Shanghai  Paris        760     
+4   New York  Paris        435     
+5   Moscow    Paris        245     
+6   Lima      New York     455     
+sqlite> SELECT * FROM flights GROUP BY origin;
+id  origin    destination  duration
+--  --------  -----------  --------
+6   Lima      New York     455     
+5   Moscow    Paris        245     
+1   New York  London       430     
+2   Shanghai  Paris        760     
+sqlite> INSERT INTO flights (origin, destination, duration) VALUES ("New York", "Paris", 490);
+sqlite> SELECT * FROM flights GROUP BY origin;
+id  origin    destination  duration
+--  --------  -----------  --------
+6   Lima      New York     455     
+5   Moscow    Paris        245     
+1   New York  London       430     
+2   Shanghai  Paris        760     
+sqlite> SELECT * FROM flights;
+id  origin    destination  duration
+--  --------  -----------  --------
+1   New York  London       430     
+2   Shanghai  Paris        760     
+4   New York  Paris        435     
+5   Moscow    Paris        245     
+6   Lima      New York     455     
+7   New York  Paris        490     
+sqlite> SELECT origin, AVG(duration) FROM flights GROUP BY origin;
+origin    AVG(duration)   
+--------  ----------------
+Lima      455.0           
+Moscow    245.0           
+New York  451.666666666667
+Shanghai  760.0           
+sqlite> 
